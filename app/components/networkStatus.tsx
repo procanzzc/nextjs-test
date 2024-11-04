@@ -25,7 +25,7 @@ const NetworkStatus = () => {
 
   if (!isOnline) {
     return (
-      <div className="fixed top-0 left-0 bg-amber-100 w-full" onClick={()=>{window.location.reload()}}>
+      <div className="fixed top-0 left-0 bg-amber-100 w-full">
         No Network
       </div>
     );

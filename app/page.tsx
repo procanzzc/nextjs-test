@@ -1,7 +1,16 @@
+"use client";
 import Image from "next/image";
 import NetworkStatus from "./components/networkStatus";
+import PullToRefresh from 'react-simple-pull-to-refresh';
+
 export default function Home() {
+  const handleRefresh = ()=>{
+    window.location.reload()
+    return Promise.resolve()
+  }
+
   return (
+      <PullToRefresh onRefresh={handleRefresh}>
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <NetworkStatus />
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
@@ -97,6 +106,8 @@ export default function Home() {
           Go to nextjs.org →
         </a>
       </footer>
+
     </div>
+      </PullToRefresh>
   );
 }
