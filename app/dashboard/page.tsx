@@ -1,8 +1,8 @@
 import type { Metadata, ResolvingMetadata } from 'next'
 
 type Props = {
-  params: { id: string }
-  searchParams: { [key: string]: string | string[] | undefined }
+  params: Promise<{ id: string }>
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>
 }
 
 export async function generateMetadata(
@@ -11,10 +11,13 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   // read route params
   const id = (await params).id
+  const key = (await searchParams).key
 
   // fetch data
   const product = {
     title: "DogeDOGE",
+    id,
+    key,
     description: "During the Biden-Harris administration, there have been many months where more aliens have entered the USA than were American Babies born."
   }
 
@@ -30,6 +33,6 @@ export async function generateMetadata(
   }
 }
 
-export default function Page({ params, searchParams }: Props) {
+export default function Page() {
   return (<div>Test Meta</div>)
 }
