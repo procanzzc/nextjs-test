@@ -14,7 +14,7 @@ const geistMono = localFont({
 });
 const APP_NAME = "Jimmy PWA App";
 const APP_DEFAULT_TITLE = "My Awesome PWA App";
-const APP_TITLE_TEMPLATE = "%s - PWA App";
+const APP_TITLE_TEMPLATE = "%s - Jimmy's PWA App";
 const APP_DESCRIPTION = "Best PWA app in the world!";
 
 export const metadata: Metadata = {
